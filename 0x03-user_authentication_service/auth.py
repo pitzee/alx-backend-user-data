@@ -6,7 +6,8 @@ from db import DB
 from user import User
 import uuid
 
+
 def _hash_password(password: str) -> bytes:
     """ returns a passwd hash """
-    hashed_password = bcrypt.hashpw(bytes(password, 'utf-8'), bcrypt.gensalt(4))
-    return hashed_password
+    hashed_pwd = bcrypt.hashpw(bytes(password, 'utf-8'), bcrypt.gensalt(4))
+    return hashed_pwd
