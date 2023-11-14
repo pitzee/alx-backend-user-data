@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ SQLAlchemy model named User """
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
@@ -15,9 +15,3 @@ class User(Base):
     hashed_password = Column(String, nullable=False)
     session_id = Column(String)
     reset_token = Column(String)
-
-    def __repr__(self):
-        return ("<User(email='%s', hashed_password='%s', "
-                "session_id='%s', reset_token='%s')>" %
-                (self.email, self.hashed_password,
-                 self.session_id, self.reset_token))
